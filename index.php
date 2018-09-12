@@ -8,7 +8,9 @@
     </head>
     <body>
         <?php
-        // put your code here
+        
+        require_once 'konekcija.php';
+        
         ?>
         
         
