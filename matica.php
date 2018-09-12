@@ -3,6 +3,19 @@
 require_once 'navbar.html';
 require_once 'konekcija.php';
 
+$naziv = "Glavna jela";
+
+
+$query = "SELECT * FROM kategorije WHERE naziv = ?";
+$stmt = $pdo->prepare($query); 
+$stmt->execute([$naziv]);
+
+while ($row = $stmt->fetch()) 
+        { 
+    
+    echo $row['opis'];
+    
+    }
 
 ?>
 
