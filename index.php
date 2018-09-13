@@ -11,8 +11,30 @@
         
         require_once 'konekcija.php';
         
+        
+        if(isset($_POST['register_submit']))
+{
+  
+        
+        $username = ($_POST['username']);
+        $ime = ($_POST['ime']);
+        $prezime = ($_POST['prezime']);
+        $email = ($_POST['email']);
+        $sifra = ($_POST['password']);
+        
+        $sifra = md5($sifra);
+        
+        $query = "INSERT INTO users(username, ime, prezime , sifra, email) "
+                . "VALUES (?,?,?,?,?)";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$username,$ime,$prezime,$sifra,$email]); 
+        
+        
+        
+}
         ?>
         
+    <!-- Login forma-->
         
   <div class="login-box">
     <div class="lb-header">
@@ -39,22 +61,35 @@
       <div class="u-form-group">
         <button>Log in</button>
       </div>
-      <div class="u-form-group">
-        <a href="#" class="forgot-password">Forgot password?</a>
-      </div>
+
     </form>
-    <form class="email-signup">
+      
+       <!-- Register forma-->
+      
+       <form class="email-signup" action="index.php" method="POST">
+        
+         <div class="u-form-group">
+            <input type="text" name="username" placeholder="Unesite username"/>
+      </div>
+        
+        <div class="u-form-group">
+            <input type="text" name="ime" placeholder="Unesite Ime"/>
+      </div>
+        
+        <div class="u-form-group">
+        <input type="text" name="prezime" placeholder="Unesite prezime"/>
+      </div>
+        
       <div class="u-form-group">
-        <input type="email" placeholder="Email"/>
+        <input type="email" name="email" placeholder="Email"/>
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Password"/>
+        <input type="password" name="password" placeholder="Password"/>
       </div>
+      
+        
       <div class="u-form-group">
-        <input type="password" placeholder="Confirm Password"/>
-      </div>
-      <div class="u-form-group">
-        <button>Sign Up</button>
+        <button name="register_submit">Sign Up</button>
       </div>
     </form>
   </div>
