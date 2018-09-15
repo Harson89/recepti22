@@ -11,11 +11,10 @@
         
         require_once 'konekcija.php';
         
+        /*Registracija*/
         
         if(isset($_POST['register_submit']))
 {
-  
-        
         $username = ($_POST['username']);
         $ime = ($_POST['ime']);
         $prezime = ($_POST['prezime']);
@@ -27,11 +26,42 @@
         $query = "INSERT INTO users(username, ime, prezime , sifra, email) "
                 . "VALUES (?,?,?,?,?)";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$username,$ime,$prezime,$sifra,$email]); 
-        
-        
-        
+        $stmt->execute([$username,$ime,$prezime,$sifra,$email]);        
 }
+
+/*Login*/
+
+  if (isset($_POST['login_submit'])) 
+  {
+      
+     $username = ($_POST['username']);
+     $sifra = ($_POST['password']);
+     
+     $sifra = md5($sifra);
+     
+   
+$query = "SELECT * FROM users WHERE username = ? AND sifra = ? Limit 1";
+$stmt = $pdo->prepare($query); 
+$stmt->execute([$username, $sifra]);
+    
+    
+     
+      if(mysqli_num_rows($user) == 1)
+    {
+        echo "Uspiešno ste se prijavili";
+        header('Location: /recepti22/matica.php');    
+       exit();
+    }
+    else
+    {
+        echo "Pogresan username ili password";
+        header('Location: /recepti22/index.php');            
+        exit();
+    } 
+     
+  }
+    
+  
         ?>
         
     <!-- Login forma-->
@@ -51,15 +81,15 @@
         log in with Google
       </a>
     </div>
-    <form class="email-login">
+      <form class="email-login" action="index.php" method="POST">
       <div class="u-form-group">
-        <input type="email" placeholder="Email"/>
+        <input  type="text" name="username" placeholder="Username"/>
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Password"/>
+        <input  type="password" name="password" placeholder="Password"/>
       </div>
       <div class="u-form-group">
-        <button>Log in</button>
+          <button name="login_submit">Log in</button>
       </div>
 
     </form>
