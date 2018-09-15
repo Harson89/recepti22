@@ -9,28 +9,12 @@
     <body>
         <?php
         
-        require_once 'konekcija.php';
+        require_once 'konekcija.php';  
+        require_once 'register.php';
         
-        /*Registracija*/
-        
-        if(isset($_POST['register_submit']))
-{
-        $username = ($_POST['username']);
-        $ime = ($_POST['ime']);
-        $prezime = ($_POST['prezime']);
-        $email = ($_POST['email']);
-        $sifra = ($_POST['password']);
-        
-        $sifra = md5($sifra);
-        
-        $query = "INSERT INTO users(username, ime, prezime , sifra, email) "
-                . "VALUES (?,?,?,?,?)";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute([$username,$ime,$prezime,$sifra,$email]);        
-}
-
+      
 /*Login*/
-
+  /*
   if (isset($_POST['login_submit'])) 
   {
       
@@ -59,9 +43,7 @@ $stmt->execute([$username, $sifra]);
         exit();
     } 
      
-  }
-    
-  
+  } */
         ?>
         
     <!-- Login forma-->
@@ -83,7 +65,7 @@ $stmt->execute([$username, $sifra]);
     </div>
       <form class="email-login" action="index.php" method="POST">
       <div class="u-form-group">
-        <input  type="text" name="username" placeholder="Username"/>
+        <input  type="text" name="username"  placeholder="Username"/>
       </div>
       <div class="u-form-group">
         <input  type="password" name="password" placeholder="Password"/>
@@ -96,7 +78,7 @@ $stmt->execute([$username, $sifra]);
       
        <!-- Register forma-->
       
-       <form class="email-signup" action="index.php" method="POST">
+       <form class="email-signup" action="register.php" method="GET">
         
          <div class="u-form-group">
             <input type="text" name="username" placeholder="Unesite username"/>
