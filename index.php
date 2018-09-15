@@ -11,39 +11,8 @@
         
         require_once 'konekcija.php';  
         require_once 'register.php';
-        
+        require_once 'login.php';
       
-/*Login*/
-  /*
-  if (isset($_POST['login_submit'])) 
-  {
-      
-     $username = ($_POST['username']);
-     $sifra = ($_POST['password']);
-     
-     $sifra = md5($sifra);
-     
-   
-$query = "SELECT * FROM users WHERE username = ? AND sifra = ? Limit 1";
-$stmt = $pdo->prepare($query); 
-$stmt->execute([$username, $sifra]);
-    
-    
-     
-      if(mysqli_num_rows($user) == 1)
-    {
-        echo "Uspiešno ste se prijavili";
-        header('Location: /recepti22/matica.php');    
-       exit();
-    }
-    else
-    {
-        echo "Pogresan username ili password";
-        header('Location: /recepti22/index.php');            
-        exit();
-    } 
-     
-  } */
         ?>
         
     <!-- Login forma-->
@@ -63,7 +32,8 @@ $stmt->execute([$username, $sifra]);
         log in with Google
       </a>
     </div>
-      <form class="email-login" action="index.php" method="POST">
+      
+      <form class="email-login" action="login.php" method="GET">
       <div class="u-form-group">
         <input  type="text" name="username"  placeholder="Username"/>
       </div>

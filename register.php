@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /*Registracija usera*/
 
 require_once 'konekcija.php';
@@ -19,7 +21,12 @@ require_once 'konekcija.php';
         $stmt = $pdo->prepare($query);
         $stmt->execute([$username,$ime,$prezime,$sifra,$email]);  
         
-        header('Location: /recepti22/index.php');
+        $_SESSION['korisnik'] = $username;
+        
+        
+        header('Location: /recepti22/matica.php');
+        
+      
 }
 
 ?>
