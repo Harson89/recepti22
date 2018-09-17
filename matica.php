@@ -1,8 +1,18 @@
 <?php
 session_start();
 
-require_once 'navbar.html';
 require_once 'konekcija.php';
+
+//Prebire tip usera i određuje kakav ce navbar biti!! 
+
+if ($_SESSION['tip'] == 0) 
+    {
+    require_once 'navbargest.html';
+}
+
+else  {
+    require_once 'navbar.html';
+}
 
 
 echo $_SESSION['tip'];

@@ -1,0 +1,80 @@
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Josefin+Sans|Kosugi+Maru" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="editdodavanjerecepata.css">
+  <link rel="stylesheet" href="editdodavanjerecepata.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<h1 id="title">Dodaj novi recept</h1>
+<div id="form-outer">
+  <p id="description">
+    Podijelite vase recepte sa svima</p>
+  <form id="survey-form">
+        <div class="rowTab">
+      <div class="labels">
+        <label id="name-label" for="name">* Autor recepta: </label>
+      </div>
+      <div class="rightTab">
+        <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Upisite naziv autora" required>
+      </div>
+    </div>
+    <div class="rowTab">
+      <div class="labels">
+        <label id="email-label" for="email">* Naziv recepta: </label>
+      </div>
+      <div class="rightTab">
+        <input type="text" name="email" id="email" class="input-field" placeholder="Upisite naziv recepta..." required>
+      </div>
+    </div>
+    <div class="rowTab">
+        <div class="labels">
+        <label for="comments">Navedite potrebne sastojke:</label>
+      </div>
+      <div class="rightTab">
+        <textarea required id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Sastojci..."></textarea>
+      </div>
+     
+    </div>
+    <div class="rowTab">
+      <div class="labels">
+        <label for="favRole">* Kategorija recepta:</label>
+      </div>
+      <div class="rightTab">
+        <select id="dropdown" name="currentPos" class="dropdown">
+          <option disabled value>Izaberite kategoriju hrane</option>
+          <option value="glavnajela">Glavna Jela</option>
+          <option value="deserti">Deserti</option>
+          <option value="predjela">Predjela</option>
+          <option value="hladnajela">Hladna Jela</option>
+          <option value="juhe">Juhe</option>
+          <option value="dijetalnajela">Dijetalna jela</option>
+          <option value="specijaliteti">Specijaliteti</option>
+        </select>
+      </div>
+    </div>
+   
+    <div class="rowTab">
+      <div class="labels">
+        <label for="comments">Opisite pripremu recepta:</label>
+      </div>
+      <div class="rightTab">
+        <textarea required id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Upisite pripremu..."></textarea>
+      </div>
+    </div>
+    
+    
+     <div class="rowTab">
+       <div class="labels">
+         Dodaj sliku:
+       </div>
+       
+    <div class="rightTab">
+      <input class="slika_upload" name="fileToUpload" type="file" id="fileToUpload">
+    </div>
+    
+    </div>
+    <button id="submit" type="submit">Gotovo</button>
+  </form>
+</div>
+ 
