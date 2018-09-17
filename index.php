@@ -35,10 +35,10 @@
       
       <form class="email-login" action="login.php" method="GET">
       <div class="u-form-group">
-        <input  type="text" name="username"  placeholder="Username"/>
+        <input  type="text" required name="username"  placeholder="Username"/>
       </div>
       <div class="u-form-group">
-        <input  type="password" name="password" placeholder="Password"/>
+        <input  type="password" required name="password" placeholder="Password"/>
       </div>
       <div class="u-form-group">
           <button name="login_submit">Log in</button>
@@ -48,31 +48,44 @@
       
        <!-- Register forma-->
       
+     
        <form class="email-signup" action="register.php" method="GET">
         
          <div class="u-form-group">
-            <input type="text" name="username" placeholder="Unesite username"/>
+            <input type="text" required name="username" placeholder="Unesite username"/>
       </div>
         
         <div class="u-form-group">
-            <input type="text" name="ime" placeholder="Unesite Ime"/>
+            <input type="text" required name="ime" placeholder="Unesite Ime"/>
       </div>
         
         <div class="u-form-group">
-        <input type="text" name="prezime" placeholder="Unesite prezime"/>
+        <input type="text" required name="prezime" placeholder="Unesite prezime"/>
       </div>
         
       <div class="u-form-group">
-        <input type="email" name="email" placeholder="Email"/>
+        <input type="email" required name="email" placeholder="Email"/>
       </div>
       <div class="u-form-group">
-        <input type="password" name="password" placeholder="Password"/>
+          <input type="password" required name="password" placeholder="Password"/>
       </div>
       
         
       <div class="u-form-group">
         <button name="register_submit">Sign Up</button>
       </div>
+      
+         
+           <?php 
+           /*
+           session_start();
+           
+           echo $_SESSION['registereror'];
+          
+            */
+           ?>
+         
+           
     </form>
   </div>
         

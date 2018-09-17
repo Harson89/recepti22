@@ -17,6 +17,17 @@ require_once 'konekcija.php';
         $sifra = ($_GET['password']);
         
         $sifra = md5($sifra);
+     
+     
+    $stmt = $pdo->prepare("SELECT count(*) FROM users WHERE username=?");
+    $stmt->execute([$username]);
+    $usernameCount = $stmt->fetchColumn();
+    
+    if($usernameCount == 0) 
+        
+    {
+     
+      
         
         $query = "INSERT INTO users(username, ime, prezime , sifra, email) "
                 . "VALUES (?,?,?,?,?)";
@@ -35,7 +46,16 @@ require_once 'konekcija.php';
         
         
         header('Location: /recepti22/matica.php');
+    }
+    
+    else 
+    {
+        header('Location: /recepti22/index.php');
+        /*
+        $_SESSION['registereror'] = "Username vec postoji!";
         
+         */
+    }
       
 }
 
