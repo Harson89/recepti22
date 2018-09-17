@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 
 /*Registracija usera*/
 
@@ -8,6 +8,8 @@ require_once 'konekcija.php';
 
  if(isset($_GET['register_submit']))
 {
+     session_start();
+     
         $username = ($_GET['username']);
         $ime = ($_GET['ime']);
         $prezime = ($_GET['prezime']);
@@ -21,7 +23,15 @@ require_once 'konekcija.php';
         $stmt = $pdo->prepare($query);
         $stmt->execute([$username,$ime,$prezime,$sifra,$email]);  
         
-        $_SESSION['korisnik'] = $username;
+        
+        //Prebire tip usera i saljega na main page kod registra
+        
+       $stmt = $pdo->prepare('SELECT user_type FROM users WHERE username = ?');
+       $stmt->execute([$username]);
+       $user = $stmt->fetch();
+       
+       $_SESSION['tip'] = $user['user_type'];
+        
         
         
         header('Location: /recepti22/matica.php');

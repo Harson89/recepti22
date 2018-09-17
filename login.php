@@ -1,9 +1,13 @@
 <?php
 
+
+
 require_once 'konekcija.php';
 
 if (isset($_GET['login_submit'])) {
    
+    session_start();
+    
     $nadimak = $_GET['username'];
     $sifra = $_GET['password'];
     $sifra = md5($sifra);
@@ -42,7 +46,14 @@ if (isset($_GET['login_submit'])) {
              echo "Sifra nije tacna!";
 
        }
-      
+       
+        //Prebire tip usera i saljega na main page kod registra
+       
+       $stmt = $pdo->prepare('SELECT user_type FROM users WHERE username = ?');
+       $stmt->execute([$nadimak]);
+       $user = $stmt->fetch();
+       
+       $_SESSION['tip'] = $user['user_type'];
     
     }
     

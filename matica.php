@@ -4,8 +4,8 @@ session_start();
 require_once 'navbar.html';
 require_once 'konekcija.php';
 
-echo $_SESSION['korisnik'];
 
+echo $_SESSION['tip'];
 
 ?>
 
