@@ -7,4 +7,55 @@ require_once 'dodavanjerecepata.html';
 
 
 
+ if(isset($_GET['dodaj'])){
+     
+     $autor = $_SESSION['id_usera'];
+     $naziv_recepta = ($_GET['nazivrecepta']);
+     $sastojci = ($_GET['sastojci']);
+     $kategorija= ($_GET['kategorija']);
+     $priprema= ($_GET['priprema']);
+     
+    /* 
+     
+     //Dodaje user_id u recepte 
+     
+     $query = "INSERT INTO recepti(user_id) " 
+             . "VALUES (?)";
+     $stmt = $pdo->prepare($query);
+     $stmt->execute([$autor]); 
+     
+     */
+     
+     
+     //Prebire id kategorije po odabranoj opciji
+     
+     
+     $stmt = $pdo->prepare('SELECT id FROM kategorije WHERE naziv = :kategorija');
+     $stmt->execute(['kategorija' => $kategorija]);
+     $user = $stmt->fetch();
+     
+    
+     
+   /*  //Dodaje id kategorije u recept
+     
+     $query = "INSERT INTO recepti(kategorije_id) "
+             . "VALUES (?)"; 
+     $stmt = $pdo->prepare($query); 
+     $stmt->execute([$user['id']]);
+     
+    */ 
+     
+     //Dodaje naziv i nacin pripreme u recepte 
+     
+     $query = "INSERT INTO recepti(user_id,kategorije_id,naziv, priprema) "
+             . "VALUES (?,?,?,?)";
+     $stmt = $pdo->prepare($query);
+     $stmt->execute([$user['id'],$autor,$naziv_recepta,$priprema]);
+     
+    header('Location: /recepti22/matica.php');
+   
+     
+ }
+
+
 ?>

@@ -1,6 +1,5 @@
 <?php
-
-require_once 'konekcija.php';
+session_start();
 ?>
 
 
@@ -17,12 +16,12 @@ require_once 'konekcija.php';
   <p id="description">
     Podijelite vase recepte sa svima</p>
   <form id="survey-form">
-        <div class="rowTab">
+        <div class="rowTab" action="dodavanjerecepata.php" method="GET">
       <div class="labels">
         <label id="name-label" for="name">* Autor recepta: </label>
       </div>
       <div class="rightTab">
-        <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Upisite naziv autora" required>
+        <input autofocus type="text" name="autor" id="name" class="input-field" placeholder="Upisite naziv autora" required>
       </div>
     </div>
     <div class="rowTab">
@@ -30,7 +29,7 @@ require_once 'konekcija.php';
         <label id="email-label" for="email">* Naziv recepta: </label>
       </div>
       <div class="rightTab">
-        <input type="text" name="email" id="email" class="input-field" placeholder="Upisite naziv recepta..." required>
+        <input type="text" name="nazivrecepta" id="email" class="input-field" placeholder="Upisite naziv recepta..." required>
       </div>
     </div>
     <div class="rowTab">
@@ -38,7 +37,7 @@ require_once 'konekcija.php';
         <label for="comments">Navedite potrebne sastojke:</label>
       </div>
       <div class="rightTab">
-        <textarea required id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Sastojci..."></textarea>
+        <textarea required id="comments" class="input-field" style="height:50px;resize:vertical;" name="sastojci" placeholder="Sastojci..."></textarea>
       </div>
      
     </div>
@@ -47,20 +46,24 @@ require_once 'konekcija.php';
         <label for="favRole">* Kategorija recepta:</label>
       </div>
       <div class="rightTab">
-        <select id="dropdown" name="currentPos" class="dropdown">
+        <select id="dropdown" name="kategorija" class="dropdown">
          <option disabled value="">Izaberite kategoriju hrane</option>
-         <!--
-          <option value="glavnajela">Glavna Jela</option>
-          <option value="deserti">Deserti</option>
-          <option value="predjela">Predjela</option>
-          <option value="hladnajela">Hladna Jela</option>
-          <option value="juhe">Juhe</option>
-          <option value="dijetalnajela">Dijetalna jela</option>
-          <option value="specijaliteti">Specijaliteti</option>
-         -->
-         <?
-        require_once 'opcijakategorija.php';
-         ?>
+       
+         <!-- Ispis kategorija u opcijama-->
+         
+       <?php
+       require_once 'konekcija.php';
+
+$stmt = $pdo->query('SELECT naziv FROM kategorije');
+foreach ($stmt as $row)
+{
+    echo '<option value="'.$row['naziv'].'" >';
+    echo $row['naziv'];
+    echo '</option>';
+    echo '<br>';
+}
+?>
+         
         
         </select>
           
@@ -72,7 +75,7 @@ require_once 'konekcija.php';
         <label for="comments">Opisite pripremu recepta:</label>
       </div>
       <div class="rightTab">
-        <textarea required id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Upisite pripremu..."></textarea>
+        <textarea required id="comments" class="input-field" style="height:50px;resize:vertical;" name="priprema" placeholder="Upisite pripremu..."></textarea>
       </div>
     </div>
     
@@ -87,7 +90,7 @@ require_once 'konekcija.php';
     </div>
     
     </div>
-    <button id="submit" type="submit">Gotovo</button>
+    <button id="submit" type="submit" name="dodaj">Gotovo</button>
   </form>
 </div>
  

@@ -42,6 +42,12 @@ require_once 'konekcija.php';
        $user = $stmt->fetch();
        
        $_SESSION['tip'] = $user['user_type'];
+       
+       $stmt = $pdo->prepare('SELECT id FROM users WHERE username = ?');
+       $stmt->execute([$username]);
+       $user = $stmt->fetch();
+       
+       $_SESSION['id_usera'] = $user['id'];
         
         
         

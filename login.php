@@ -54,6 +54,12 @@ if (isset($_GET['login_submit'])) {
        $user = $stmt->fetch();
        
        $_SESSION['tip'] = $user['user_type'];
+       
+       $stmt = $pdo->prepare('SELECT id FROM users WHERE username = ?');
+       $stmt->execute([$nadimak]);
+       $user = $stmt->fetch();
+       
+       $_SESSION['id_usera'] = $user['id'];
     
     }
     

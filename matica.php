@@ -15,7 +15,9 @@ else  {
 }
 
 
-echo $_SESSION['tip'];
+echo $_SESSION['tip'] . '<br>';
+
+echo $_SESSION['id_usera'];
 
 ?>
 
