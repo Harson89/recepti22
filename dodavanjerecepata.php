@@ -47,7 +47,7 @@ require_once 'dodavanjerecepata.html';
      
      //Dodaje naziv i nacin pripreme u recepte 
      
-     $query = "INSERT INTO recepti(user_id,kategorije_id,naziv, priprema) "
+     $query = "INSERT INTO recepti(kategorije_id,user_id,naziv, priprema) "
              . "VALUES (?,?,?,?)";
      $stmt = $pdo->prepare($query);
      $stmt->execute([$user['id'],$autor,$naziv_recepta,$priprema]);

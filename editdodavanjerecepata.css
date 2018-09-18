@@ -1,5 +1,8 @@
 html,body {
   
+  background-image: url('nbproject/wallpaper1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   font-family: "Montserrat", Helvetica, sans-serif;
   min-width: 320px;
