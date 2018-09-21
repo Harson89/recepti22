@@ -52,8 +52,8 @@ require_once 'dodavanjerecepata.html';
      $stmt = $pdo->prepare($query);
      $stmt->execute([$user['id'],$autor,$naziv_recepta,$priprema]);
      
-    header('Location: /recepti22/matica.php');
-   
+         header('Location: /recepti22/matica.php');
+
      
  }
 
