@@ -89,8 +89,8 @@ while($user = $stmt1->fetch()) {
     
     
      echo '<button class="uredi_button">';  
-     echo '<a href="delete_recept.php?izbrisi_id='.$idrecepta.'">';
-    echo 'Izbriši';
+     echo '<a href="edit_recepata.php?uredi_id='.$idrecepta.'">';
+    echo 'Uredi';
      echo '</a>';
     echo '</button> ';
     

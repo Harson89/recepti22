@@ -1,0 +1,105 @@
+<?php
+session_start();
+
+
+
+
+ 
+$naziv = $_SESSION['ispis_naziva'];
+$priprema = $_SESSION['ispis_priprema'];
+
+
+
+
+
+
+?>
+
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Josefin+Sans|Kosugi+Maru" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="editdodavanjerecepata.css">
+  <link rel="stylesheet" href="edit_uredjivanje_recepata.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="form-outer">
+  <p id="description">
+      
+    <?php
+    
+    
+   
+    
+    echo $naziv;
+    
+    ?>
+  
+  </p>
+  <form id="survey-form">
+        <div class="rowTab" action="edit_recepata.php" method="GET">
+      
+    </div>
+    <div class="rowTab">
+      <div class="labels">
+        <label id="email-label" for="email">* Naziv recepta: </label>
+      </div>
+      <div class="rightTab">
+        <input type="text" name="nazivrecepta" id="email" class="input-field" placeholder=
+               
+               <?php 
+               
+               echo $naziv;
+               
+               ?>
+               
+               required>
+      </div>
+    </div>
+    <div class="rowTab">
+      
+     
+     
+    </div>
+    <div class="rowTab">
+     
+   
+      
+   
+        
+   
+          
+      
+    <div class="rowTab">
+      <div class="labels">
+        <label for="comments">Opisite pripremu recepta:</label>
+      </div>
+      <div class="rightTab">
+        <textarea required id="comments" class="input-field" style="height:50px;resize:vertical;" name="priprema" placeholder=
+                  
+                  <?php
+                  
+                  echo $priprema;
+                  
+                  ?>
+                                 
+                  ></textarea>
+      </div>
+    </div>
+    
+    
+     <div class="rowTab">
+     
+    
+    </div>
+    <button id="submit" type="submit" name="uredi">Gotovo</button>
+  </form>
+</div>
+ 
