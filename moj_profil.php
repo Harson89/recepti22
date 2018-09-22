@@ -27,7 +27,7 @@ while ($row = $stmt2->fetch()) {
    echo '<br> <br> <br>'; 
    
   echo '<div class="tabelica1">'; 
-  echo '    <table class="tabelica"> ';
+  echo '    <table border="1px solid black" class="tabelica"> ';
   echo ' <tr>';
   echo ' <th class="zanaslov" colspan="2"> '.$row["naziv"].'</th> ';
   echo ' </tr> ';
@@ -49,6 +49,7 @@ while($user = $stmt3->fetch()) {
   echo '</td> ' ;
   
   
+  
   echo '<td class="zaautora"> ';
   
   $vlasnik = $row['user_id'];
@@ -68,9 +69,38 @@ while($user = $stmt1->fetch()) {
   
   
   echo '</td> ';
+  
   echo '</tr> ';
   echo ' <tr> ';
+  
  
+    echo '<td class="zadugmad"> ';
+
+    //Uredi i izbrisi buttoni 
+    
+    
+    
+    echo '<button class="izbrisi_button">';  
+     echo '<a href="delete_recept.php?izbrisi_id='.$idrecepta.'">';
+    echo 'Izbriši';
+     echo '</a>';
+    echo '</button> ';
+    
+    
+    
+     echo '<button class="uredi_button">';  
+     echo '<a href="delete_recept.php?izbrisi_id='.$idrecepta.'">';
+    echo 'Izbriši';
+     echo '</a>';
+    echo '</button> ';
+    
+    
+
+    
+    
+    echo '</td> ';
+
+  
   echo ' </tr> ';
   echo '<tr> ';
   echo '  <td colspan="2" class="priprema"> Priprema: <br> <br> '.$row["priprema"].'</td> ';
