@@ -9,27 +9,28 @@ require_once 'footer.html';
 
 
 
-/*Edit forma 
+
+
+$id_recepta1=$_GET['uredi_id'];
+
+
 
 if(isset($_GET['uredi'])) {
 
 $novinaziv = $_GET['nazivrecepta'];
 $novapriprema = $_GET['priprema'];
-$_SESSION['id_recepta'] = $_GET['uredi_id'];
 
 
-$query = "UPDATE recepti SET naziv=?, priprema=? "   . "WHERE id = ?"; 
+$query = "UPDATE recepti SET naziv=?, priprema=?  WHERE id = ?"; 
 $stmt = $pdo->prepare($query);
-$stmt->execute([$novinaziv,$novapriprema,$id_recepta]);
+$stmt->execute([$novinaziv,$novapriprema,$id_recepta1]);
 
 
 
 }
-*/
 
 
-$id_recepta = $_GET['uredi_id'];
-echo $id_recepta;
+
 
 
 
@@ -39,14 +40,14 @@ echo $id_recepta;
 
 $query = "SELECT * FROM recepti WHERE id = ?";
 $stmt2 = $pdo->prepare($query); 
-$stmt2->execute([$id_recepta]);
+$stmt2->execute([$id_recepta1]);
 while ($row = $stmt2->fetch()) {
    
    
   $_SESSION['ispis_priprema'] = $row['priprema'];
   $_SESSION['ispis_naziva'] = $row['naziv'];
   
-  $idrecepta = $row ['id'];
+  $idrecepta = $row['id'];
   
   $stmt3 = $pdo->prepare('SELECT url FROM slike WHERE recepti_id = ?');
 $stmt3->execute([$idrecepta]);
@@ -56,18 +57,9 @@ while($user = $stmt3->fetch()) {
  
 }
   
-  $vlasnik = $row['user_id'];
  
-//Preko dobijenog id-a ispisuje ime i prezime usera 
-$stmt1 = $pdo->prepare('SELECT * FROM users WHERE id = ?');
-$stmt1->execute([$vlasnik]);
-while($user = $stmt1->fetch()) {
-    
-    $imena = $user['ime'];
-    $prezimena = $user['prezime'];
-  
 } 
-}
+
 
 
 

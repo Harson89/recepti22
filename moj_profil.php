@@ -88,12 +88,10 @@ while($user = $stmt1->fetch()) {
     
     
     
-     echo '<button class="uredi_button">';  
-     echo '<a href="edit_recepata.php?uredi_id='.$idrecepta.'">';
-    echo 'Uredi';
-     echo '</a>';
-    echo '</button> ';
-    
+   echo ' <form method="GET" action="edit_recepata_PRAVI.php"> ';
+   echo ' <input name="daaj" type="hidden" value="'.$idrecepta.'" /> ';
+   echo ' <input type="submit" name="daj_id_uredi" value="Uredi" href="edit_recepata_PRAVI.php" /> ';
+   echo ' </form> ';
     
 
     
