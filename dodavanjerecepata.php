@@ -11,7 +11,6 @@ require_once 'dodavanjerecepata.html';
      
      $autor = $_SESSION['id_usera'];
      $naziv_recepta = ($_GET['nazivrecepta']);
-     $sastojci = ($_GET['sastojci']);
      $kategorija= ($_GET['kategorija']);
      $priprema= ($_GET['priprema']);
      
