@@ -37,7 +37,7 @@ while($user = $stmt1->fetch()) {
 
 
 //Prebire iz baze recepte pod tom kategorijom
-$query = "SELECT * FROM recepti WHERE kategorije_id = 1";
+$query = "SELECT * FROM recepti WHERE kategorije_id = 4";
 $stmt2 = $pdo->prepare($query); 
 $stmt2->execute();
 while ($row = $stmt2->fetch()) {

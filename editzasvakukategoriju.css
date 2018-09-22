@@ -1,16 +1,72 @@
-.tabelica1 {
-       white-space:nowrap;
-table-layout: fixed;
-   width: 96%;
-   text-overflow: ellipsis;
+body {
+    background-image: url('nbproject/wallpaper2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 
-.tabelica {
-       white-space:nowrap;
-table-layout: fixed;
-   width: 96%;
-   text-overflow: ellipsis;
-}
+.tabelica1 { 
+    margin: 0 auto;
+    max-width: 1100pt;
+   width:1100pt;
+   overflow-wrap: break-word;
+ }
 
+ 
+ .tabelica {
+    max-width: 1100pt;
+   width:1100pt;
+   overflow-wrap: break-word;
+ }
+ 
+ .priprema  {
+   max-width: 1100pt;
+   width:1100pt;
+   overflow-wrap: break-word;
+   font-family: sans-serif;
+   font-size: 22px;
+   text-align: center;
+   
+ }
+ 
+ .zasliku {
+     width:700pt;
+     height: 350pt;
+ }
+ 
+ .zanaslov {
+     max-width: 1100pt;
+    text-transform: uppercase;
+     overflow-wrap: break-word;
+    font-family: 'Permanent Marker', cursive;
+		color: #2b2b2b;
+		font-size: 5em;
+		margin: 0;
+     height: 100pt;
+ }
+ 
+ .zaautora {
+    
+                
+                overflow-wrap: break-word;
+		text-align: center;
+		background: url(nbproject/wallpaper1.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 
-
+		-webkit-text-fill-color: transparent;
+		background: -o-linear-gradient(transparent, transparent);
+		-webkit-background-clip: text;
+                font-weight: bold;
+		font-size: 5em;
+	
+ }
+ 
+ img {
+     width:700pt;
+     height: 350pt;
+     border-radius: 15px;
+ }
+ 
+ 
