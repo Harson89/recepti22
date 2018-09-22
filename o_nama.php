@@ -13,6 +13,7 @@ else {
 }
 
 require_once 'onama.html';
+require_once 'footer.html';
 
 
 

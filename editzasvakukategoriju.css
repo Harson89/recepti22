@@ -20,6 +20,7 @@ body {
  }
  
  .priprema  {
+
    max-width: 1100pt;
    width:1100pt;
    overflow-wrap: break-word;
@@ -30,11 +31,13 @@ body {
  }
  
  .zasliku {
+
      width:700pt;
      height: 350pt;
  }
  
  .zanaslov {
+
      max-width: 1100pt;
     text-transform: uppercase;
      overflow-wrap: break-word;
@@ -47,7 +50,7 @@ body {
  
  .zaautora {
     
-                
+
                 overflow-wrap: break-word;
 		text-align: center;
 		background: url(nbproject/wallpaper1.jpg);
@@ -64,6 +67,7 @@ body {
  }
  
  img {
+     
      width:700pt;
      height: 350pt;
      border-radius: 15px;

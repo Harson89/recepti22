@@ -18,10 +18,7 @@
     <!-- Login forma-->
         
   <div class="login-box">
-    <div class="lb-header">
-      <a href="#" class="active" id="login-box-link">Login</a>
-      <a href="#" id="signup-box-link">Sign Up</a>
-    </div>
+      <br> <br> <br>
     <div class="social-login">
       <a href="#">
         <i class="fa fa-facebook fa-lg"></i>
