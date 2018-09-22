@@ -1,0 +1,16 @@
+.tabelica1 {
+       white-space:nowrap;
+table-layout: fixed;
+   width: 96%;
+   text-overflow: ellipsis;
+}
+
+.tabelica {
+       white-space:nowrap;
+table-layout: fixed;
+   width: 96%;
+   text-overflow: ellipsis;
+}
+
+
+
