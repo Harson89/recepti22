@@ -15,10 +15,7 @@ else  {
     require_once 'navbar.html';
 }
 
-
-echo $_SESSION['tip'] . '<br>';
-
-echo $_SESSION['id_usera'];
+require_once 'svi_recepti.php';
 
 ?>
 
