@@ -27,7 +27,7 @@ while ($row = $stmt2->fetch()) {
    echo '<br> <br> <br>'; 
    
   echo '<div class="tabelica1">'; 
-  echo '    <table border="1px solid black" class="tabelica"> ';
+  echo '    <table class="tabelica"> ';
   echo ' <tr>';
   echo ' <th class="zanaslov" colspan="2"> '.$row["naziv"].'</th> ';
   echo ' </tr> ';
@@ -80,7 +80,7 @@ while($user = $stmt1->fetch()) {
     
     
     
-    echo '<button class="izbrisi_button">';  
+    echo '<button  class="izbrisi_button">';  
      echo '<a href="delete_recept.php?izbrisi_id='.$idrecepta.'">';
     echo 'Izbriši';
      echo '</a>';
@@ -93,6 +93,11 @@ while($user = $stmt1->fetch()) {
    echo ' <input type="submit" name="daj_id_uredi" value="Uredi" href="edit_recepata_PRAVI.php" /> ';
    echo ' </form> ';
     
+   
+   echo ' <form method="GET" action="dodavanjeSLIKESVE.php"> ';
+   echo ' <input name="daaj" type="hidden" value="'.$idrecepta.'" /> ';
+   echo ' <input type="submit" name="daj_id_uredi" value="Dodaj sliku!" href="dodavanjeSLIKESVE.php" /> ';
+   echo ' </form> ';
 
     
     
