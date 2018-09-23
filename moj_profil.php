@@ -17,6 +17,22 @@ require_once 'footer.html';
 $trenutniuser = $_SESSION['id_usera'];
 
 
+
+//Broji recepte od prijavljenog usera
+
+ $stmt = $pdo->prepare("SELECT count(*) FROM recepti WHERE user_id=?");
+    $stmt->execute([$trenutniuser]);
+    $receptiCount = $stmt->fetchColumn();
+    
+    if($receptiCount == 0) 
+    { 
+     echo '<br> <br>';
+     echo "Još nemate objavljenih recepata!";
+     echo '<br> <br> <br>';
+     echo '<a href="dodavanjerecepata.php"> Objavi sada </a>';
+    }
+
+
 //Prebire iz baze recepte od trenutnog usera 
 
 $query = "SELECT * FROM recepti WHERE user_id = ?";
@@ -24,6 +40,8 @@ $stmt2 = $pdo->prepare($query);
 $stmt2->execute([$trenutniuser]);
 while ($row = $stmt2->fetch()) {
    
+     
+    
    echo '<br> <br> <br>'; 
    
   echo '<div class="tabelica1">'; 
@@ -55,11 +73,13 @@ while($user = $stmt3->fetch()) {
   
   $vlasnik = $row['user_id'];
  
+
 //Preko dobijenog id-a ispisuje ime i prezime usera 
 $stmt1 = $pdo->prepare('SELECT * FROM users WHERE id = ?');
 $stmt1->execute([$vlasnik]);
 while($user = $stmt1->fetch()) {
     
+  
     $imena = $user['ime'];
     $prezimena = $user['prezime'];
 
