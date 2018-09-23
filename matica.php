@@ -4,6 +4,7 @@ session_start();
 require_once 'konekcija.php';
 
 
+
 //Prebire tip usera i određuje kakav ce navbar biti!! 
 
 if ($_SESSION['tip'] == 0) 

@@ -1,5 +1,5 @@
 <?php
-session_start();
+ session_start();
 ?>
 
 
@@ -20,8 +20,8 @@ session_start();
 <div id="form-outer">
   <p id="description">
     Podijelite vase recepte sa svima</p>
-  <form id="survey-form">
-        <div class="rowTab" action="dodavanjerecepata.php" method="GET">
+  <form id="survey-form" enctype="multipart/form-data" action="dodavanjerecepata.php" method="GET" >
+        <div class="rowTab">
       
     </div>
     <div class="rowTab">
@@ -79,7 +79,7 @@ foreach ($stmt as $row)
        </div>
        
     <div class="rightTab">
-      <input class="slika_upload" name="fileToUpload" type="file" id="fileToUpload">
+      <input required class="slika_upload" name="fileToUpload" type="file" id="fileToUpload">
     </div>
     
     </div>

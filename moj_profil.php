@@ -34,16 +34,17 @@ while ($row = $stmt2->fetch()) {
   echo ' <tr> ';
   echo '  <td class="zasliku" rowspan="2"> ';
   
-  $idrecepta = $row ['id'];
+ $idrecepta = $row ['id'];
   
-  $stmt3 = $pdo->prepare('SELECT url FROM slike WHERE recepti_id = ?');
+  $stmt3 = $pdo->prepare('SELECT slika FROM recepti WHERE id = ?');
 $stmt3->execute([$idrecepta]);
 while($user = $stmt3->fetch()) {
     
-    $url = $user['url'];
+    $url = $user['slika'];
     
     echo "<img src='".$url."' alt='Nema slike'>";
 }
+  
   
   
   echo '</td> ' ;
@@ -93,12 +94,12 @@ while($user = $stmt1->fetch()) {
    echo ' <input type="submit" name="daj_id_uredi" value="Uredi" href="edit_recepata_PRAVI.php" /> ';
    echo ' </form> ';
     
-   
+   /*
    echo ' <form method="GET" action="dodavanjeSLIKESVE.php"> ';
    echo ' <input name="daaj" type="hidden" value="'.$idrecepta.'" /> ';
    echo ' <input type="submit" name="daj_id_uredi" value="Dodaj sliku!" href="dodavanjeSLIKESVE.php" /> ';
    echo ' </form> ';
-
+   */
     
     
     echo '</td> ';

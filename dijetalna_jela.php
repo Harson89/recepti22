@@ -54,14 +54,15 @@ while ($row = $stmt2->fetch()) {
   
   $idrecepta = $row ['id'];
   
-  $stmt3 = $pdo->prepare('SELECT url FROM slike WHERE recepti_id = ?');
+  $stmt3 = $pdo->prepare('SELECT slika FROM recepti WHERE id = ?');
 $stmt3->execute([$idrecepta]);
 while($user = $stmt3->fetch()) {
     
-    $url = $user['url'];
+    $url = $user['slika'];
     
     echo "<img src='".$url."' alt='Nema slike'>";
 }
+  
   
   
   echo '</td> ' ;
