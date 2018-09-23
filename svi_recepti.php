@@ -1,6 +1,7 @@
 <?php
 
 require_once 'konekcija.php';
+require_once 'footer.html';
 
 $tipusera = $_SESSION['tip'];
 
@@ -98,6 +99,12 @@ while($user = $stmt1->fetch()) {
   echo '<br>';
   echo '</div>'; 
 
+    echo '<br>';
+  echo '<br>';
+  echo '<br>';
+
+  
+  
 }
 ?>
 
