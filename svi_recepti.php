@@ -79,7 +79,12 @@ while($user = $stmt1->fetch()) {
     $imena = $user['ime'];
     $prezimena = $user['prezime'];
 
-   echo 'Autor:'. $imena . " " . $prezimena . "<br>";    
+   echo 'Autor:'. $imena . " " . $prezimena . "<br>";   
+   
+   echo '
+       <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Frecepti22%2Fmatica.php&layout=button_count&size=large&mobile_iframe=true&width=84&height=28&appId" width="84" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+   ';
+   
 }
 
   
@@ -99,11 +104,13 @@ while($user = $stmt1->fetch()) {
   echo '<br>';
   echo '</div>'; 
 
+
+ 
     echo '<br>';
   echo '<br>';
   echo '<br>';
 
-  
+ 
   
 }
 ?>

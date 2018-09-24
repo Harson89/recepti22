@@ -67,9 +67,28 @@ body {
      border-radius: 15px;
  }
  
+ 
  .zadugmad {
      
-     
+    }
+ 
+ .dugme {
+   
+background:    #0f2940;
+background:    -webkit-linear-gradient(#0086ff, #0f2940 50%, #0086ff);
+background:    linear-gradient(#0086ff, #0f2940 50%, #0086ff);
+border-radius: 1000px;
+width:         240px;
+height:        50px;
+color:         #ffffff;
+display:       inline-block;
+font:          normal 700 40px/50px "Roboto", sans-serif;
+text-align:    center;
+text-shadow:   4px 4px #0086ff;
  }
+  
  
- 
+ #link {
+       text-decoration: none;
+     color:white;
+ }

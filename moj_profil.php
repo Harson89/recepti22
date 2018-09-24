@@ -101,17 +101,17 @@ while($user = $stmt1->fetch()) {
     
     
     
-    echo '<button  class="izbrisi_button">';  
-     echo '<a href="delete_recept.php?izbrisi_id='.$idrecepta.'">';
-    echo 'Izbriši';
+    echo '<button  class="dugme">';  
+     echo '<a id="link" href="delete_recept.php?izbrisi_id='.$idrecepta.'">';
+    echo 'IZBRIŠI';
      echo '</a>';
     echo '</button> ';
     
-    
-    
+    echo '<br> <br>';
+        
    echo ' <form method="GET" action="edit_recepata_PRAVI.php"> ';
    echo ' <input name="daaj" type="hidden" value="'.$idrecepta.'" /> ';
-   echo ' <input type="submit" name="daj_id_uredi" value="Uredi" href="edit_recepata_PRAVI.php" /> ';
+   echo ' <input class="dugme" type="submit" name="daj_id_uredi" value="UREDI" href="edit_recepata_PRAVI.php" /> ';
    echo ' </form> ';
     
    /*
@@ -142,19 +142,6 @@ while($user = $stmt1->fetch()) {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
